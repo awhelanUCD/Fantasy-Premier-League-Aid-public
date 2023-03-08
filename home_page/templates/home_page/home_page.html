@@ -1,0 +1,109 @@
+{% extends "./base.html" %}
+{% load static %}
+
+
+{% block page_content %}
+
+<link rel='stylesheet' href="{% static 'css/home_page/home_page.css' %}">
+
+<!-- Give description of player data feature -->
+
+<div class="col-md-12">
+	<div class="card shadow-lg mb-2 mt-4" style="border-radius: 2em;
+	">
+
+	<div class="card-body row">
+
+		<div class="col-md-5" style="">
+			<div style="">
+				<h3 class="h3_class">Player Data</h3>
+				<p class="home-page-paragraph">
+					Make informed transfer decisions and team selections by using this feature. A table with both basic and advanced data such as goals, assists and expected goals
+					is provided. This table has search and sort functionality and allows users to add and
+					remove columns so only the data that they want to see is shown.
+				</p>
+			</div>
+			<div class="mx-auto"style="text-align: center;">
+				<a href="{% url 'player_data' %}"
+				class="btn btn-primary mb-4">
+				View Player Data
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<img class= "" style="max-width: 100%;" src="{% static 'img/playerDataCollage.PNG' %}" style="">
+	</div>
+	<row>
+	</div>
+
+</div>
+</div>
+
+<!-- Give description of live gameweek feature -->
+
+<div class="col-md-12">
+	<div class="card shadow-lg mb-2 mt-4" style="border-radius: 2em;
+	">
+
+	<div class="card-body row">
+
+		<div class="col-md-7">
+			<img class= "" style="max-width: 100%;" src="{% static 'img/liveGameweekCollage.PNG' %}" style="">
+		</div>
+
+		<div class="col-md-5" style="">
+			<div>
+				<h3 class="h3_class">Live Gameweek</h3>
+				<p class="home-page-paragraph">
+					Players of head-to-head fantasy leagues no longer have to wait until the end of the gameweek to see updated league standings.
+					Real-time league standings, player data and fixture scores are provided.</p>
+				</div>
+
+				<div class="mx-auto"style="text-align: center;">
+					<a href="{% url 'live_gameweek' %}"
+					class="btn btn-primary mb-4">
+					View Live Gameweek
+				</a>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+
+<!-- Give description of league table feature -->
+
+<div class="col-md-12">
+	<div class="card shadow-lg mb-2 mt-4" style="border-radius: 2em;
+	">
+
+	<div class="card-body row">
+
+		<div class="col-md-5" style="">
+			<div style="">
+				<h3 class="h3_class">League Table</h3>
+				<p class="home-page-paragraph">
+					View the league table of your fantasy league with additional information. Namely, a form column and a global percentile column. For players of head-to-head leagues,
+					the form column gives results from each players last five fixtures. For classic leagues, the average points from the last five gameweeks
+					is provided.
+				</p>
+			</div>
+			<div class="mx-auto"style="text-align: center;">
+				<a href="{% url 'league_table' %}"
+				class="btn btn-primary mb-4">
+				View League Table
+			</a>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<img class= "" style="max-width: 100%;" src="{% static 'img/leagueTable.PNG' %}" style="">
+	</div>
+	<row>
+	</div>
+
+</div>
+</div>
+
+{% endblock %}

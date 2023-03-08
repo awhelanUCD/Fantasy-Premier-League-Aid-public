@@ -1,0 +1,70 @@
+{% extends "./base.html" %}
+{% load static %}
+
+
+{% block page_content %}
+<link rel='stylesheet' href="{% static 'css/player_data/player_data.css' %}">
+
+<h3 style="color: ;" class="mt-4 h3_class">Player Data</h3>
+
+<div class="d-flex">
+  <div class="card shadow-sm  mb-2 justify-content-center mx-auto" style="border-radius: 2em;">
+
+    <div id="checkbox_div" class="" style="overflow:auto">
+
+      <table id="checkbox_table" class="checkbox_table m-2" align="center" cellpadding=10>
+         <!-- Table which gives users option to add or remove columns goes here -->
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card shadow-lg  mb-2" style="border-radius: 2em;">
+  <div class="mr-2 ml-2" style=" overflow:auto;">
+    <table id="playerDataTable" class="" style="">
+      <!-- Player data goes here -->
+      <tbody id="liveFPLTableBody">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!--
+<div class="mt-4" style="background: white; border-radius: 2em; width: 100px; text-align: center;">
+  <span class="ml-2" style="padding; 10px font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 13px;">Key</span>
+  <button type="button" class="infoButton m-2" data-toggle="modal" style="border: 0; border-radius: 2em; height: 30px; width: 30px" data-target="#modal_${entryID}">
+    <i class="fa-solid fa-info fa=black "></i></button>
+  </div>
+  -->
+
+<!-- Load player dats from Django 'context' -->
+  <script type="text/javascript" >
+    var dataFPL_JSON = (JSON.parse("{{playerData|escapejs}}"))['data'];
+  </script>
+
+  <script type="text/javascript"  src="{% static 'js/playerData.js' %}"></script>
+
+
+  <!-- Load in javascript file which gives table search and sort functionality -->
+  <script type="text/javascript"  src="{% static 'js/fancyTable.js' %}">
+
+  </script>
+
+  <!-- Give options to fancyTable.js -->
+  <script type="text/javascript" >
+
+    $(document).ready(function()
+    {
+      $("#playerDataTable").fancyTable({
+        sortColumn: 7,
+        sortOrder: 'ascending',
+        pagination: true,
+        perPage:10,
+        paginationClass: "btn-sm btn-light",
+        pagination: 'someClass',
+        columnNames_: allColumnNames,
+      });
+    });
+
+  </script>
+  {% endblock %}

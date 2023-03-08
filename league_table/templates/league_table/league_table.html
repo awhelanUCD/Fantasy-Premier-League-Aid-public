@@ -1,0 +1,43 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block page_content %}
+
+<link rel='stylesheet' href="{% static 'css/carouselStyle.css' %}">
+<link rel='stylesheet' href="{% static 'css/league_table/league_table.css' %}">
+
+<h3  class="mt-4 h3_class">League Table</h3>
+
+<div class="card shadow-lg leagueTableCard mb-2"  style="overflow:auto;">
+
+<table  id="FPLleagueTable" class="fpleagueaid-table leagueTables-mobile" style="">
+<!-- here goes our data -->
+</table>
+
+</div>
+
+<!-- Load in league data from 'context' in Django -->
+<script type="text/javascript" >
+  var dataFPL_JSON = (JSON.parse("{{leagueData|escapejs}}"))['data'];
+</script>
+
+<!-- Give column names and set column headings depending on league type -->
+
+{% if league_type == "classic" %}
+<script>
+      let columnHeadings=['Rank','Name','Last GW','Total','5 GW Average','Global Percentile']
+      let columnNames=['rank','player_name','event_total','total','five_game_average','percentile']
+</script>
+
+{% elif league_type == "head2head" %}
+<script>
+  let columnHeadings=['Rank','Name','P','W','D','L','Pts','Score','Form','Global Percentile']
+  let columnNames=['rank', 'player_name', 'matches_played', 'matches_won', 'matches_drawn', 'matches_lost', 'total','points_for','form','percentile']
+</script>
+{% endif %}
+
+<!-- Generate league table -->
+<script type="text/javascript"  src="{% static 'js/leagueTable.js' %}"></script>
+
+
+{% endblock %}

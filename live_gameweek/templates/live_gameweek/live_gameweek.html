@@ -1,0 +1,53 @@
+{% extends "./base.html" %}
+{% load static %}
+
+<link rel='stylesheet' href="{% static 'css/liveTable.css' %}">
+<link rel='stylesheet' href="{% static 'css/footer.css' %}">
+
+{% block page_content %}
+
+<link rel='stylesheet' href="{% static 'css/carouselStyle.css' %}">
+<link rel='stylesheet' href="{% static 'css/live_gameweek/live_gameweek.css' %}">
+
+
+<!-- Display note if gameweek has conluded -->
+{% if gamweek_ongoing == False %}
+<div class="mt-4" style="font-weight:bold">*Note: gameweek {{current_gameweek}} has now concluded</div>
+{% endif %}
+
+<h3 style=";" class="mt-4 h3_class">Live Table</h3>
+
+<div class="row">
+  <div class="card shadow-lg liveTableCard mb-2" style="overflow:auto">
+
+    <table  id="liveFPLTable"  class="leagueTables-mobile fpleagueaid-table"  style="background: white, padding:">
+     <!-- Live table data goes here -->
+    </table>
+
+  </div>
+
+  <h3 class="mt-2 mx-auto h3_class" style="">Live Fixtures</h3>
+  <div class="card shadow-lg mb-2 fixtureTableCard">
+
+    <table  id="fixtureTable" class="">
+      <!-- Live fixture data goes here -->
+    </table>
+  </div>
+</div>
+
+<!-- Modals which give team info data go here -->
+<div id="ModalsDeveloped">
+</div>
+
+<!-- Load live league table, fixture and team info data from Django 'context' -->
+<script type="text/javascript" >
+
+var dataFPL_JSON = (JSON.parse("{{leagueData|escapejs}}"))['data'];
+var dataFPLFixtures_JSON = (JSON.parse("{{fixtureData|escapejs}}"))['data'];
+var dataFPLTeamInfo_JSON = (JSON.parse("{{team_info|escapejs}}"))['data'];
+
+</script>
+
+<!-- Fills in live table, fixture table and modals-->
+<script type="text/javascript"  src="{% static 'js/liveGameweek.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,202 @@
+@media screen and (max-width: 500px) {
+  .leagueTables-mobile {
+    width: 480px !important;
+
+  }
+}
+
+.liveTableCard{
+  border-radius: 2em;
+  width: 100%;
+}
+
+.fixtureTableCard{
+  border-radius: 2em;
+  width: 100%;
+}
+
+.leagueColHead_Rank{
+  text-align: center !important;
+  padding-left: 6px;
+}
+
+.leagueCol_Rank{
+  text-align: center !important;
+}
+
+#col_team_head{
+  text-align: center !important;
+  padding-left: 0px !important;
+}
+.col_team{
+  text-align: right !important;
+  padding-left: 0px !important;
+}
+
+.imgRankChange{
+  padding: 0 4px;
+}
+
+.team_image_div{
+  text-align: right;
+  padding-left: 0px !important;
+}
+
+.col_web_name{
+  border-right: 1px solid rgb(239, 239, 239)  !important;
+  padding-right: 10px !important;
+}
+
+.team_shirt_image{
+  width: 25px;
+}
+
+.team_shirt_image2{
+  width: 20px;
+  float: none;
+}
+
+.player_team_name{
+  display: none;
+}
+
+#fixtureTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 58%;
+  border:0;
+  padding-top: 5%;
+  padding-bottom: 40px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2em;
+}
+
+#fixtureTable th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: normal;
+  border:0;
+  border-bottom: 1px solid rgb(300, 239, 239);
+  color: #383838;
+  color: #818963
+}
+
+#fixtureTable td {
+  border:0;
+  text-align: center;
+  border-bottom: 1px solid rgb(239, 239, 239);
+  font-size: 12px;
+  padding: 10px;
+}
+
+#fixtureTable tr:hover{
+  background-color:#f8f6f6;
+}
+
+.teamScore{
+  border: 0;
+  font-size: 20px;
+  color: #383838;#FFFFFF;
+  padding: 5px;
+  font-weight: 750;
+  border-radius: 2em;
+}
+
+.teamInfoTable{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.teamInfoTable th {
+  padding-top: 7px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgb(300, 239, 239);
+  font-size: 12px;
+  font-weight: normal;
+  /* border:0;*/
+  text-align: center;
+  color: #383838;
+  color: #818963;
+  /*padding: 5px;*/
+}
+
+.teamInfoTable td {
+  border:0;
+  font-size: 13px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.teamInfoTable tr:hover{
+  background-color:#f8f6f6;
+}
+
+.teamEntry{
+  border:0;
+  font-size: 13px;
+  padding: 5px;
+  float:inline-end;
+}
+
+
+.teamInfo{
+  background-color: white;
+  border:0;
+  cursor: pointer;
+}
+
+.scoreClass{
+  background-color: #bdc1c6;
+}
+
+.Ycf7w.de0OAd {
+  background-color: #bdc1c6;
+}
+
+.Ycf7w.teamDrawing {
+  background-color: #bdc1c6;
+}
+
+.Ycf7w.teamWinning {
+  background-color:  #23d323;
+
+}
+
+.Ycf7w.teamLosing {
+  background-color: red; rgb(228, 5, 42); /*#FF0000;*/
+
+}
+
+.GXDoWd {
+  float: middle;
+}
+
+.Ycf7w {
+  border-radius: 2px;
+  float: middle;
+  font-size: 10px;
+  line-height: 15px;
+  padding: 0 4px;
+  margin: 0px 8px 0px 8px;
+  color: #fff;
+  font-weight: bold;
+  white-space: nowrap;
+  border-radius: 1em;
+}
+
+.OGs04e {
+  display: inline-block;
+}
+
+.iqhYvZ {
+  height: 12px;
+  width: 13px;
+  fill: rgb(255, 0, 90);
+}

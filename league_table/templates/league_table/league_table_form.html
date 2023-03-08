@@ -1,0 +1,130 @@
+{% extends "./base.html" %}
+{% load static %}
+
+<link rel='stylesheet' href="{% static 'css/footer.css' %}">
+
+
+
+{% block page_content %}
+
+<link rel='stylesheet' href="{% static 'css/carouselStyle.css' %}">
+<link rel='stylesheet' href="{% static 'css/league_table/league_table.css' %}">
+
+<h3 style="" class="mt-4 h3_class">League Table</h3>
+
+<div class="mt-4"style="font-family: 'Open Sans', sans-serif; font-size: 15px;">
+
+
+  <!-- Card which displays form -->
+  <div class="col-md-4 mx-auto">
+
+    <div class="card shadow-sm mb-2" style="width: 18rem; border-radius: 2em; text-align: center;" class="d-flex justify-content-center">
+      <table>
+      <tr>
+      <td style="text-align: center; border-bottom: 1px solid rgb(239, 239, 239);">
+
+        <form class="card-body show-loading-after-submit" action="" style="line-height: 1.3rem; font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 15px;"" method="post" >
+          {% csrf_token %}
+
+          {{ form.as_p }}
+          <p class="errorParagraph">{{ form.league_number.errors.as_text }}</p>
+
+          <input class="btn btn-primary" type="submit" value="Submit">
+
+        </form>
+      <td>
+      </tr>
+      <tr>
+        <td>
+        <div class="card-body">
+        <p class="card-text" style=" margin-top:; font-size: 15px;  font-style:; color: rgb(0, 0, 0)">
+          <i class="fa-solid fa-info"></i>
+          Login to <a href="https://fantasy.premierleague.com/" target="_blank" rel="noopener noreferrer">fantasy premier league</a> and follow instructions in slide-show to see your league number
+        </p>
+        </div>
+      </td>
+      </tr>
+      </table>
+
+
+    </div>
+  </div>
+
+
+  <!-- Card which displays information to user to find league ID -->
+  <div class="card shadow-lg mb-2" style="border-radius: 2em;">
+    <div class="card-body">
+      <div class="d-flex justify-content-center">
+        <div id="carouselExampleIndicators" class="carousel slide"  data-ride="carousel" data-bs-interval="false" data-interval="false">
+          <ol class="carousel-indicators ">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="{% static 'img/leaguePage.png' %}" >
+
+            <p class="testimonial">	<span style="font-weight: bold;">Step 1:</span> Navigate to <a href="https://fantasy.premierleague.com/leagues" target="_blank" rel="noopener noreferrer">https://fantasy.premierleague.com/leagues</a>, enter relevant league </p>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="{% static 'img/leagueTableID.png' %}" >
+              <p class="testimonial"><span  style="font-weight: bold;">Step 2:</span> League number can be clearly seen in the URL for the resultant page</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+
+            <i class="fa-solid fa-angle-left" ></i>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+
+            <i class="fa-solid fa-angle-right"  ></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+</div>
+
+</div>
+
+
+<!--Script for generating loaindg modal after submitting form and having it accepted-->
+<script>
+  function showLoadingModal(){
+    loadingModal = document.getElementById('loadingModal')
+    setTimeout("loadingModal.style.display = 'block';",1000)
+  }
+
+
+  var formsToDelay = document.getElementsByClassName('show-loading-after-submit');
+  for (var i = 0; i < formsToDelay.length; i++) {
+    formsToDelay[i].addEventListener('submit', showLoadingModal);
+  }
+
+</script>
+
+<!--Html for loading modal-->
+<div>
+  <div id="loadingModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Please wait...</h5>
+      </div>
+      <div class="modal-body">
+        <p> Your request is processing. This might take a few moments.</p>
+        <img class=""  style="  margin-left: auto;
+        margin-right: auto;
+        display: block;" src="{% static 'img/loading.gif' %}" >
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+.leagueColHead_Rank{
+  text-align: center !important;
+  padding-left: 6px;
+}
+
+.leagueCol_Rank{
+  text-align: center !important;
+}
+
+@media screen and (max-width: 580px) {
+  .leagueTables-mobile {
+    width: 480px !important;
+
+  }
+}
+
+.leagueTableCard{
+      border-radius: 2em;
+      width: 100%;
+}

@@ -1,0 +1,33 @@
+.home-page-paragraph{
+/*	color: #999;
+	color: #818963;*/
+	font-size: 1rem;
+	text-align: center;
+	line-height: 1.8rem;
+	letter-spacing: 0.3px;
+	color: #262b33;
+	font-family: Poppins,helvetica,PingFang SC,Arial !important;
+}
+
+.h3_class_title {
+	color:  #333;
+	text-align: center;
+	/*text-transform: uppercase;*/
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	position: relative;
+	margin: 0px 0 0px;
+}
+.h3_class_title::after {
+	content: "";
+	width: 80px;
+	position: absolute;
+	margin: 0 auto;
+	height: 3px;
+	background: linear-gradient(90deg,white 0%, grey 100%);
+
+
+	left: 0;
+	right: 0;
+	bottom: -10px;
+}

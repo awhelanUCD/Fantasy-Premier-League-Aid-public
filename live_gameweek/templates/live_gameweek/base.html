@@ -1,0 +1,97 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/26874a7407.js" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<link rel='stylesheet' href="{% static 'css/core.css' %}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+  <title>Live Gameweek</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.jfif' %}">
+</head>
+
+<div id="page-container" style="background: rgb(243,242,239)">
+
+
+<!-- Create navigation bar -->
+
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top" style="padding-top: 0px !important; padding-bottom: 0px !important; background: white; color: white !important;	font-family: 'Open Sans', sans-serif; font-weight: bold; font-size: 14px;">
+    <div class="container"style=";">
+        <a class="navbar-brand"  href="{% url 'home_page' %}"><img class= ""  src="{% static 'img/updated_logo.jfif' %}" width="90"
+              height="45" style="border-radius: 2em;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home_page' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'player_data' %}">Player Data</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'live_gameweek' %}">Live Gameweek</a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'league_table' %}">League Table</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+</nav>
+
+<body>
+<div class="container" style="padding-top: 50px;">
+    {% block page_content %}{% endblock %}
+</div>
+</body>
+
+
+<!-- Create footer -->
+<footer class=" mt-4" id="footer" style="background: white; font-size: 14px">
+
+  <section class="">
+  <div class="container p-2 pb-0">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-0">
+        <h5 class="mb-0" style="letter-spacing: 2px; color: #818963;">Contact</h5>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+  <div class=" container p-2 pb-0" >
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4">
+        <ul class="list-unstyled mb-0">
+          <li>
+
+            <i class="fa-solid fa-envelope"></i>
+            <span style="color: #4f4f4f;"> andrew.whelan@ucdconnect.ie </span>
+          </li>
+          <li>
+            <i class="fa-brands fa-linkedin"></i>
+            <span style="color: #4f4f4f;"> https://www.linkedin.com/in/andrew-whelan-3b5354259/ </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="text-center p-1 "  >
+    © 2023 Copyright:
+    <span class="text-dark"> fpleagueaid.com</span>
+  </div>
+</footer>
+
+
+</div>
