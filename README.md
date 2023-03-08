@@ -5,7 +5,7 @@
 
 # Fantasy Premier League Aid
 
-A Django web application which provides data and insights to players of fantasy premier league. This web app has both desktop and mobile compatibility.
+A web application which provides data and insights to players of fantasy premier league. This web app has both desktop and mobile compatibility.
 
 ## Overview
 
@@ -14,7 +14,7 @@ A Django web application which provides data and insights to players of fantasy 
 Clone it to a local repository:
 
 ```
-$ git clone  https://github.com/awhelanUCD/Fantasy-Premier-League-Website.git
+$ git clone  https://github.com/awhelanUCD/Fantasy-Premier-League-Aid-public.git
 ```
 Go into the project directory and run the command:
 
@@ -23,6 +23,22 @@ $ python manage.py runserver
 ```
 
 Open `http://localhost:3000` 
+
+### Security
+
+If a user wishes to deploy this web app, a new security key should be generated. To do so run the following commands to generate a new security key:
+
+```
+$ python manage.py shell
+>>> from django.core.management.utils import get_random_secret_key
+>>> print(get_random_secret_key())
+```
+Copy and paste the generated security key into the security variable in `./config/settings.py`
+
+```
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'ki$sbha*lcx^m@8qdlpp90h_v8@dy1!nrmwu#+lq&yg=*rd5+c'
+```
 
 #### Requirements
 
@@ -46,10 +62,12 @@ Open `http://localhost:3000`
 
 #### Home Page
 
-The home page provides a brief description of the components of this web app and links to them.
+The home page provides a brief description of the components of this web app and links to them (desktop and mobile view shown here).
 
 <p float="left">
-  <img style="float: left;" src="static/img/homePagePreview_3.png" width="50%" height="50%"> 
+  <img style="float: left;" src="static/img/homePagePreview_3.png" width="50%" height="50%">
+  &nbsp &nbsp &nbsp &nbsp &nbsp
+  <img style="float: left;" src="static/img/mobileView_homePage.png" width="25%" height="25%">
 </p>
 
 #### Live Gameweek
