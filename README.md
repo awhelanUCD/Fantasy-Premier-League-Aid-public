@@ -16,6 +16,12 @@ Clone it to a local repository:
 ```
 $ git clone  https://github.com/awhelanUCD/Fantasy-Premier-League-Aid-public.git
 ```
+
+Enter the directory `./config` and execute the script `create_globalDefinitions.py` in order to update global variables needed to run this web app:
+```
+$ python create_globalDefinitions.py
+```
+
 Go into the project directory and run the command:
 
 ```
