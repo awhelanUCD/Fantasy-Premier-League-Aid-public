@@ -82,7 +82,7 @@ A weakness of the main fantasy premier league website is that it does not update
 
 In this component, users are given a form prompting them to enter their league number as well as instructions for how to find this number.
 <p><img style="float: left;" src="static/img/liveGameweekForm.png" width="50%" height="50%"> </p>
-After the backend of this web-app receives this number, it check to see if the user has entered a valid league number of a head-to-head league and if so, generates the live gameweek page for the user. The team information for each fantasy league player can be seen by clicking the info button in the 'Team Info' column in the live fixture table.
+After the backend of this web-app receives this number, it check to see if the user has entered a valid league number of a head-to-head league and if so, generates the live gameweek page for the user. The team information for each fantasy league player can be seen by clicking the info button in the 'Team Info' column in the live fixture table. (To try out this feature, an example league number to use is: 783464)
 
 <p float="left">
   <br>
